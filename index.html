@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do-List-App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom Scrollbar for Task List */
+    #taskList {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    #taskList::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    #taskList::-webkit-scrollbar-thumb {
+      background-color: #64748b; /* Tailwind slate-500 */
+      border-radius: 4px;
+    }
+
+    #taskList::-webkit-scrollbar-thumb:hover {
+      background-color: #475569; /* Tailwind slate-600 */
+    }
+  </style>
+</head>
+<body class="bg-gray-50 h-screen flex items-center justify-center">
+  <div class="w-full max-w-lg mx-auto bg-white shadow-xl rounded-lg p-6">
+    <h1 class="text-3xl font-semibold text-center text-gray-800 mb-6">🕒 To-Do-List-App</h1>
+    <div class="space-y-4">
+      <!-- Input Section -->
+      <div class="grid grid-cols-3 gap-2 items-center">
+        <input 
+          type="text" 
+          id="taskInput" 
+          placeholder="Add a new task..." 
+          class="col-span-2 border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+        >
+        <input 
+          type="datetime-local" 
+          id="taskDeadline" 
+          class="border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+        >
+      </div>
+      <div class="flex justify-end">
+        <button 
+          id="addTaskButton" 
+          class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-all duration-200"
+        >
+          Add Task
+        </button>
+      </div>
+      <!-- Task List Section -->
+      <ul id="taskList" class="list-none space-y-4"></ul>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
